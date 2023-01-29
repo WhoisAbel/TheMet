@@ -15,14 +15,14 @@ import coil.load
 import coil.request.CachePolicy
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.metmuseum.R
-import io.github.metmuseum.databinding.ArtDetailsFragmentBinding
+import io.github.metmuseum.databinding.FragmentArtDetailsBinding
 import io.github.metmuseum.themet.common.util.autoCleared
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ArtDetailsFragment : Fragment() {
 
-    private var binding by autoCleared<ArtDetailsFragmentBinding>()
+    private var binding by autoCleared<FragmentArtDetailsBinding>()
     var adapter by autoCleared<ArtAdditionalImagesAdapter>()
     private val viewModel: ArtDetailsViewModel by viewModels()
 
@@ -30,7 +30,7 @@ class ArtDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = ArtDetailsFragmentBinding.inflate(
+        binding = FragmentArtDetailsBinding.inflate(
             inflater, container, false
         )
         return binding.root

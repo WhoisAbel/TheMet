@@ -9,7 +9,7 @@
         android:id="@+id/artIdListFragment"
         android:name="io.github.metmuseum.themet.arts.ui.list.ArtIdListFragment"
         android:label="The Met"
-        tools:layout="@layout/art_id_list_fragment">
+        tools:layout="@layout/fragment_art_id_list">
 
         <action
             android:id="@+id/action_artIdList_to_artDetails"
@@ -21,7 +21,7 @@
         android:id="@+id/artDetailsFragment"
         android:name="io.github.metmuseum.themet.arts.ui.details.ArtDetailsFragment"
         android:label="Details"
-        tools:layout="@layout/art_details_fragment">
+        tools:layout="@layout/fragment_art_details">
 
         <argument
             android:name="artId"

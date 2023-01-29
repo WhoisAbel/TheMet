@@ -37,12 +37,12 @@ android {
     productFlavors {
         dev {
             dimension "mode"
-            resValue "string", "API_URL", "\"https://collectionapi.metmuseum.org\""
+            resValue "string", "API_URL", "\"https://collectionapi.metmuseum.org/public/collection/v1/\""
         }
 
         prod {
             dimension "mode"
-            resValue "string", "API_URL", "\"https://collectionapi.metmuseum.org\""
+            resValue "string", "API_URL", "\"https://collectionapi.metmuseum.org/public/collection/v1/\""
         }
     }
 
@@ -77,12 +77,6 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    //noinspection GradleDependency
-    implementation("com.squareup.okhttp3:okhttp:$okhttp_version") {
-        version {
-            strictly "3.12.2"
-        }
-    }
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
