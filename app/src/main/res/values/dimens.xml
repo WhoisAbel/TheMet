@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="spacing_zero">0dp</dimen>
+    <dimen name="spacing_one">1dp</dimen>
+    <dimen name="spacing_half_base">2dp</dimen>
+    <dimen name="spacing_base">4dp</dimen>
+    <dimen name="spacing_2x">8dp</dimen>
+    <dimen name="spacing_3x">12dp</dimen>
+    <dimen name="spacing_4x">16dp</dimen>
+    <dimen name="spacing_5x">20dp</dimen>
+    <dimen name="spacing_6x">24dp</dimen>
+    <dimen name="spacing_7x">28dp</dimen>
+    <dimen name="spacing_8x">32dp</dimen>
+    <dimen name="spacing_9x">36dp</dimen>
+    <dimen name="spacing_10x">40dp</dimen>
+    <dimen name="spacing_11x">44dp</dimen>
+    <dimen name="spacing_12x">48dp</dimen>
+    <dimen name="spacing_13x">52dp</dimen>
+    <dimen name="spacing_14x">56dp</dimen>
+    <dimen name="spacing_15x">60dp</dimen>
+    <dimen name="spacing_16x">64dp</dimen>
+    <dimen name="spacing_17x">68dp</dimen>
+    <dimen name="spacing_18x">72dp</dimen>
+    <dimen name="spacing_19x">76dp</dimen>
+    <dimen name="spacing_20x">80dp</dimen>
+    <dimen name="spacing_21x">84dp</dimen>
+
+    <dimen name="sp_1">1sp</dimen>
+    <dimen name="sp_2">2sp</dimen>
+    <dimen name="sp_3">3sp</dimen>
+    <dimen name="sp_6">6sp</dimen>
+    <dimen name="sp_8">8sp</dimen>
+    <dimen name="sp_9">9sp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_11">11sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_19">19sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_21">21sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_25">25sp</dimen>
+    <dimen name="sp_36">36sp</dimen>
+    <dimen name="sp_42">42sp</dimen>
+
+
+</resources>
