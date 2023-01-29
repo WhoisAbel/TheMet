@@ -26,6 +26,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "mode"/*, "distribution"*/
+    productFlavors {
+        dev {
+            dimension "mode"
+            resValue "string", "API_URL", "\"https://collectionapi.metmuseum.org\""
+        }
+
+        prod {
+            dimension "mode"
+            resValue "string", "API_URL", "\"https://collectionapi.metmuseum.org\""
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
