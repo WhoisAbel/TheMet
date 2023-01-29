@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">The Met</string>
+    <string name="label_search">Search for Artworks in The Met</string>
+    <string name="label_artwork_details">Artwork Details</string>
+    <string name="label_artwork_title">Title</string>
+    <string name="label_artwork_name">Artwork Name</string>
+    <string name="label_artwork_repository">Repository</string>
+    <string name="label_artwork_department">Department</string>
+    <string name="label_artwork_date">Date</string>
+    <string name="label_artwork_accession_number">Accession Number</string>
+    <string name="label_artwork_dimensions">Dimensions</string>
+    <string name="label_artwork_additional_images">Additional Images</string>
+    <string name="msg_empty_List">"The list is empty :(("</string>
 </resources>
