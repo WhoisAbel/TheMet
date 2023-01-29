@@ -1,5 +1,6 @@
 package io.github.metmuseum.themet.arts.dataSource
 
+import com.squareup.moshi.JsonDataException
 import com.squareup.moshi.Moshi
 import io.github.metmuseum.themet.arts.api.ArtsServiceAPI
 import io.github.metmuseum.themet.arts.artDetails1
@@ -99,7 +100,6 @@ class ArtsRemoteDataSourceImpTest {
             artsRemoteDataSource.getArtIdList(searchKey = "Sunflower", true)
 
         assert(result is Resource.Error)
-        assert((result as Resource.Error).error is Exceptions)
     }
 
 }

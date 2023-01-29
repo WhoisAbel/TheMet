@@ -9,13 +9,13 @@ import retrofit2.http.Query
 
 interface ArtsServiceAPI {
 
-    @GET("/public/collection/v1/search")
+    @GET("search")
     suspend fun getArtIdList(
         @Query("q") searchKey: String,
         @Query("hasImages") hasImages: Boolean = true
     ): Response<ArtIdList>
 
-    @GET("/public/collection/v1/objects/{artId}")
+    @GET("objects/{artId}")
     suspend fun getArtDetails(
         @Path("artId") artId: Int
     ): Response<ArtDetails>

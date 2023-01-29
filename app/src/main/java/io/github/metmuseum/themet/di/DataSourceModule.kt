@@ -7,8 +7,6 @@ import dagger.hilt.components.SingletonComponent
 import io.github.metmuseum.themet.arts.dataSource.ArtsRemoteDataSourceImp
 import io.github.metmuseum.themet.arts.repositories.ArtsRemoteDataSource
 
-
-@Suppress("unused")
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class DataSourceModule {

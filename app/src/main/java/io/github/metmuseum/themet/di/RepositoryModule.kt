@@ -7,8 +7,6 @@ import dagger.hilt.components.SingletonComponent
 import io.github.metmuseum.themet.arts.repositories.ArtsRepositoryImp
 import io.github.metmuseum.themet.arts.usecase.ArtsRepository
 
-
-@Suppress("unused")
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {

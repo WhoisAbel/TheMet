@@ -9,8 +9,6 @@ import io.github.metmuseum.themet.arts.usecase.GetArtDetailsImp
 import io.github.metmuseum.themet.arts.usecase.GetArtIdList
 import io.github.metmuseum.themet.arts.usecase.GetArtIdListImp
 
-
-@Suppress("unused")
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class UseCaseModule {

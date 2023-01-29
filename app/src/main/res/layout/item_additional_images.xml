@@ -15,8 +15,8 @@
         android:layout_margin="@dimen/spacing_base">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="@dimen/spacing_21x"
+            android:layout_height="@dimen/spacing_21x"
             android:background="?android:attr/selectableItemBackground">
 
             <androidx.appcompat.widget.AppCompatImageView

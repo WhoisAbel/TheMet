@@ -15,19 +15,20 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.metmuseum.R
-import io.github.metmuseum.databinding.ArtIdListFragmentBinding
+import io.github.metmuseum.databinding.FragmentArtIdListBinding
 import io.github.metmuseum.themet.common.util.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class ArtIdListFragment : Fragment() {
 
     lateinit var navController: NavController
 
-    private var binding by autoCleared<ArtIdListFragmentBinding>()
+    private var binding by autoCleared<FragmentArtIdListBinding>()
     var adapter by autoCleared<ArtIdListAdapter>()
     private val viewModel: ArtIdListViewModel by viewModels()
     private var queryJob: Job? = null
@@ -38,7 +39,7 @@ class ArtIdListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = ArtIdListFragmentBinding.inflate(
+        binding = FragmentArtIdListBinding.inflate(
             inflater,
             container,
             false
@@ -66,12 +67,10 @@ class ArtIdListFragment : Fragment() {
 
         binding.apply {
 
-            if (viewModel.getKeyboardVisibility())
-                lifecycleScope.launchWithErrorHandler(Dispatchers.Main) {
-                    delay(100)
-                    etSearch.requestFocus()
-                    showKeyboard(etSearch)
-                }
+            if (viewModel.getKeyboardVisibility()) {
+                etSearch.requestFocus()
+                showKeyboard(etSearch)
+            }
 
             etSearch.doAfterTextChanged {
                 if (queryJob?.isActive == true)
@@ -111,8 +110,7 @@ class ArtIdListFragment : Fragment() {
                             if (uiState.artIdList.total != 0) {
                                 adapter.submitList(uiState.artIdList.objectIDs)
                                 binding.rvArtIdList.smoothScrollToPosition(0)
-                            }
-                            else
+                            } else
                                 Toast.makeText(
                                     requireContext(),
                                     getString(R.string.msg_empty_List),

@@ -12,13 +12,12 @@ import io.github.metmuseum.R
 fun bindImageUrl(imageView: ImageView, url: String?, loading: ProgressBar) {
 
     imageView.load(url) {
-        error(R.drawable.ic_the_met)
-        diskCachePolicy(CachePolicy.DISABLED)
-        memoryCachePolicy(CachePolicy.DISABLED)
-        listener(onSuccess = { request, result ->
+        error(R.drawable.image_placeholder)
+        memoryCachePolicy(CachePolicy.ENABLED)
+        listener(onSuccess = { _, _ ->
             loading.visibility = View.GONE
         },
-            onError = { request, result ->
+            onError = { _, _ ->
                 loading.visibility = View.GONE
             }
         )
