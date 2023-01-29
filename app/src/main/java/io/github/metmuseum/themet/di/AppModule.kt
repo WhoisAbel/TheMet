@@ -9,6 +9,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.github.metmuseum.BuildConfig
 import io.github.metmuseum.R
+import io.github.metmuseum.themet.arts.api.ArtsServiceAPI
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -66,6 +67,12 @@ object AppModule {
     fun provideMoshi(): Moshi {
         return Moshi.Builder()
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiClient(retrofit: Retrofit): ArtsServiceAPI {
+        return retrofit.create(ArtsServiceAPI::class.java)
     }
 
 }
