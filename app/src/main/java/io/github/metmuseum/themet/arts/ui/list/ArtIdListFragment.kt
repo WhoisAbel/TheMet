@@ -31,7 +31,6 @@ class ArtIdListFragment : Fragment() {
     var adapter by autoCleared<ArtIdListAdapter>()
     private val viewModel: ArtIdListViewModel by viewModels()
     private var queryJob: Job? = null
-    var recyclerViewScrollStateCallback: ((Int) -> Unit)? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -130,6 +129,11 @@ class ArtIdListFragment : Fragment() {
         adapter = ArtIdListAdapter { id ->
             viewModel.setLatestSearchKey(binding.etSearch.text.toString())
             viewModel.setKeyboardVisibility(false)
+
+            safeNavigate(
+                navController,
+                ArtIdListFragmentDirections.actionArtIdListToArtDetails(id)
+            )
 
         }
 
