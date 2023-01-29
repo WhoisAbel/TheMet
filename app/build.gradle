@@ -27,6 +27,12 @@ android {
         }
     }
 
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+
     flavorDimensions "mode"/*, "distribution"*/
     productFlavors {
         dev {
