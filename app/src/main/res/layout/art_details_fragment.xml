@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="artDetails"
+            type="io.github.metmuseum.themet.arts.model.ArtDetails" />
+
+        <variable
+            name="isDataLoad"
+            type="Boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".arts.ui.details.ArtDetailsFragment"
+            tools:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/pb_loading_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_4x"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:visibleUnless="@{isDataLoad}">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    style="@style/Headline5Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_2x"
+                    android:layout_marginTop="@dimen/spacing_2x"
+                    android:text="@{artDetails.title}"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Sir Anthony Van Dyck" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_primary_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="h,1:1"
+                    android:layout_marginHorizontal="@dimen/spacing_2x"
+                    android:layout_marginTop="@dimen/spacing_4x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"
+                    bind:imageUrl="@{artDetails.primaryImageSmall}"
+                    bind:loading="@{pbLoading}"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/pb_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_primary_image"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_primary_image"
+                    app:layout_constraintStart_toStartOf="@+id/iv_primary_image"
+                    app:layout_constraintTop_toTopOf="@+id/iv_primary_image" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_art_additional_images"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/spacing_2x"
+                    android:layout_marginTop="@dimen/spacing_4x"
+                    android:layout_marginBottom="@dimen/spacing_4x"
+                    android:scrollbars="horizontal"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintDimensionRatio="w,1:3.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_primary_image"
+                    tools:listitem="@layout/item_additional_images"
+                    tools:itemCount="3"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_art_details"
+                    style="@style/Headline5Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_2x"
+                    android:layout_marginTop="@dimen/spacing_4x"
+                    android:text="@string/label_artwork_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_art_additional_images" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_art_details">
+
+                    <include
+                        layout="@layout/layout_art_details"
+                        bind:details="@{artDetails.objectName}"
+                        bind:header="@{@string/label_artwork_name}" />
+
+                    <include
+                        layout="@layout/layout_art_details"
+                        bind:details="@{artDetails.department}"
+                        bind:header="@{@string/label_artwork_department}" />
+
+                    <include
+                        layout="@layout/layout_art_details"
+                        bind:details="@{artDetails.objectDate}"
+                        bind:header="@{@string/label_artwork_date}" />
+
+                    <include
+                        layout="@layout/layout_art_details"
+                        bind:details="@{artDetails.repository}"
+                        bind:header="@{@string/label_artwork_repository}" />
+
+                    <include
+                        layout="@layout/layout_art_details"
+                        bind:details="@{artDetails.dimensions}"
+                        bind:header="@{@string/label_artwork_dimensions}" />
+
+                    <include
+                        layout="@layout/layout_art_details"
+                        bind:details="@{artDetails.accessionNumber}"
+                        bind:header="@{@string/label_artwork_accession_number}" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

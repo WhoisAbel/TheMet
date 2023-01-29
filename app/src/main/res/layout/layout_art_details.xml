@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="header"
+            type="String" />
+
+        <variable
+            name="details"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_header"
+            style="@style/Headline6Bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_2x"
+            android:text="@{header}"
+            tools:text="Drawing" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_details"
+            style="@style/Subtitle1_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_4x"
+            android:text="@{details}"
+            tools:text="Details" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_one"
+            android:layout_marginHorizontal="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_2x"
+            android:background="@color/black" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

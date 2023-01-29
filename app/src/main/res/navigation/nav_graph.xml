@@ -11,6 +11,21 @@
         android:label="The Met"
         tools:layout="@layout/art_id_list_fragment">
 
+        <action
+            android:id="@+id/action_artIdList_to_artDetails"
+            app:destination="@id/artDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/artDetailsFragment"
+        android:name="io.github.metmuseum.themet.arts.ui.details.ArtDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/art_details_fragment">
+
+        <argument
+            android:name="artId"
+            app:argType="integer" />
 
     </fragment>
 
